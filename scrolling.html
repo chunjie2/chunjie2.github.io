@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thesis Presentation</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="overflow-hidden h-screen relative">
+  <!-- 导航栏 -->
+  <div id="sideNav" class="fixed top-1/2 right-0 transform -translate-y-1/2 pr-4 z-50 text-white text-sm tracking-wide">
+    <ul class="nav-menu flex flex-col gap-4 items-end shadow-xl">
+      <li class="nav-item" data-page="2"><span class="indicator"></span>Theory</li>
+      <li class="nav-item" data-page="3"><span class="indicator"></span>Background</li>
+      <li class="nav-item" data-page="4"><span class="indicator"></span>Proposal</li>
+      <li class="nav-item" data-page="5"><span class="indicator"></span>Thesis</li>
+      <li class="nav-item" data-page="6"><span class="indicator"></span>Project</li>
+    </ul>
+  </div>
+
+  <!-- 页面容器 -->
+  <div id="pageContainer" class="overflow-y-scroll snap-y snap-mandatory h-screen scroll-smooth">
+
+    
+  
+    <!-- Page 1 -->
+    <section class="page snap-start h-screen w-full relative flex flex-col justify-center px-10 text-white bg-black">
+      <img src="images/bg_intro.jpg" alt="Background" class="absolute inset-0 w-full h-full object-cover -z-10" />
+      <div class="fade text-left space-y-6 max-w-5xl">
+        <h1 class="text-6xl font-extrabold leading-tight">Urban Gateway</h1>
+      </div>
+    </section>
+
+    <!-- Page 2 -->
+    <section class="page snap-start h-screen w-full bg-[#f6f6f4] flex flex-col md:flex-row items-center justify-center gap-12 px-10 text-[#1b1c21]">
+      <div class="fade w-[35%] h-[35%] bg-white shadow-md flex items-center justify-center">
+        <img src="https://via.placeholder.com/800x800?text=Leather" alt="Leather" class="object-contain max-w-full max-h-full" />
+      </div>
+      <div class="fade max-w-xl">
+        <h2 class="text-4xl font-semibold mb-4">Spring-Summer 27 Collection</h2>
+        <p class="mb-6 leading-relaxed">
+          From court to commute, SS27 reflects the depth and range of what PrimeAsia does best...
+        </p>
+        <button class="px-6 py-2 bg-black text-white rounded-full">Discover</button>
+      </div>
+    </section>
+
+    <!-- Page 3 (New LAX Historic Transition Section) -->
+<section class="page snap-start h-screen w-full bg-black text-white flex flex-col items-center justify-center relative">
+  <!-- 上方大标题 -->
+  <h1 id="laxTitle" class="text-6xl text-gray-400 mb-8 transition duration-500 ease-in-out">
+    Early LAX
+  </h1>
+
+  <!-- 图片展示 -->
+  <div class="relative w-[80%] max-w-5xl overflow-hidden">
+    <img id="laxPhoto" src="LAX photo/oldlaxphoto.png" alt="Old LAX" class="w-full transition duration-700 ease-in-out" />
+  </div>
+
+  <!-- 描述文字 -->
+  <p class="mt-6 text-xs text-center max-w-4xl px-4">
+    The original Los Angeles International Airport was established in 1928 as Mines Field. It became LAX in the 1940s, initially serving as a modest airfield before evolving into one of the world's busiest airports. The early terminals, roads, and runways reflected the automobile-centric planning of mid-century Los Angeles.
+  </p>
+</section>
+    
+
+    <!-- Page 4 (Updated Airport Diagram Section) -->
+<section class="page snap-start h-screen w-full bg-white flex flex-col items-center justify-center text-black px-4 relative">
+  <h2 class="text-2xl font-bold mb-4">LAX Transit Center Evolution</h2>
+  <div class="relative w-full max-w-[800px] aspect-square flex items-center justify-center">
+    
+    <!-- 垂直滑块及标签 -->
+<div class="absolute left-6 top-1/2 transform -translate-y-1/2 flex flex-col items-center">
+  <span class="text-sm mb-2 text-right">Urban</span>
+  <input id="sliderY" type="range" min="0" max="2" value="0" class="vertical accent-purple-600">
+  <span class="text-sm mt-2 text-right">Site</span>
+</div>
+
+
+    <!-- 图像展示区域 -->
+    
+    <div class="relative w-full max-w-[1000px] aspect-square overflow-hidden">
+  <img id="mapImageCurrent" src="airport diagram/scale-01.png" class="absolute inset-0 w-full h-full object-contain transition-opacity duration-500 opacity-100 z-10" />
+  <img id="mapImageNext" src="airport diagram/scale-01.png" class="absolute inset-0 w-full h-full object-contain transition-opacity duration-500 opacity-0 z-0 pointer-events-none" />
+</div>
+
+
+  </div>
+
+  <!-- 下方横向滑块 -->
+  <div class="mt-6 w-[600px]">
+    <div class="flex justify-between text-xs px-1">
+      <span>Before the LAX Transit Center</span>
+      <span>Current with LAX Transit Center</span>
+      <span>Proposal extend LAX Transit Center</span>
+    </div>
+    <input id="sliderX" type="range" min="0" max="2" value="0" class="w-full accent-purple-300">
+  </div>
+</section>
+
+
+    <!-- Page 5 -->
+<section class="page snap-start h-screen w-full bg-gray-100 flex flex-wrap justify-center items-center gap-4 p-10 overflow-y-auto">
+  <!-- 9 placeholders with smaller size -->
+  <div class="fade w-[28%] max-w-[300px] aspect-[1/1] bg-gray-300"></div>
+  <div class="fade w-[28%] max-w-[300px] aspect-[1/1] bg-gray-300"></div>
+  <div class="fade w-[28%] max-w-[300px] aspect-[1/1] bg-gray-300"></div>
+  <div class="fade w-[28%] max-w-[300px] aspect-[1/1] bg-gray-300"></div>
+  <div class="fade w-[28%] max-w-[300px] aspect-[1/1] bg-gray-300"></div>
+  <div class="fade w-[28%] max-w-[300px] aspect-[1/1] bg-gray-300"></div>
+  <div class="fade w-[28%] max-w-[300px] aspect-[1/1] bg-gray-300"></div>
+  <div class="fade w-[28%] max-w-[300px] aspect-[1/1] bg-gray-300"></div>
+  <div class="fade w-[28%] max-w-[300px] aspect-[1/1] bg-gray-300"></div>
+</section>
+
+
+
+
+<!-- Page 6 -->
+<section class="page snap-start min-h-screen w-full bg-white flex flex-col items-center px-10 py-12 overflow-y-auto">
+  <h2 class="text-xl font-bold mb-8">Massing Aeests</h2>
+
+  <!-- 两排网格布局，每排5个 -->
+  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+    <!-- 10个模型项 -->
+    <!-- 以下为 model_01 ~ model_10 -->
+    <!-- 每个都相同结构，只替换编号即可 -->
+    <div class="group w-[260px] h-[260px] mx-auto">
+      <model-viewer
+        src="models/model_01.glb"
+        camera-controls
+        auto-rotate
+        interaction-prompt="auto"
+        interaction-prompt-style="wiggle"
+        disable-zoom
+        disable-pan
+        disable-tap
+        class="transition-transform duration-300 group-hover:scale-110"
+        style="width:100%; height:100%;"
+        onmouseenter="this.src='models/model_01_hover.glb'"
+        onmouseleave="this.src='models/model_01.glb'">
+      </model-viewer>
+    </div>
+
+    <div class="group w-[260px] h-[260px] mx-auto">
+      <model-viewer src="models/model_02.glb" camera-controls auto-rotate interaction-prompt="auto" interaction-prompt-style="wiggle" disable-zoom disable-pan disable-tap class="transition-transform duration-300 group-hover:scale-110" style="width:100%; height:100%;" onmouseenter="this.src='models/model_02_hover.glb'" onmouseleave="this.src='models/model_02.glb'"></model-viewer>
+    </div>
+
+    <div class="group w-[260px] h-[260px] mx-auto">
+      <model-viewer src="models/model_03.glb" camera-controls auto-rotate interaction-prompt="auto" interaction-prompt-style="wiggle" disable-zoom disable-pan disable-tap class="transition-transform duration-300 group-hover:scale-110" style="width:100%; height:100%;" onmouseenter="this.src='models/model_03_hover.glb'" onmouseleave="this.src='models/model_03.glb'"></model-viewer>
+    </div>
+
+    <div class="group w-[260px] h-[260px] mx-auto">
+      <model-viewer src="models/model_04.glb" camera-controls auto-rotate interaction-prompt="auto" interaction-prompt-style="wiggle" disable-zoom disable-pan disable-tap class="transition-transform duration-300 group-hover:scale-110" style="width:100%; height:100%;" onmouseenter="this.src='models/model_04_hover.glb'" onmouseleave="this.src='models/model_04.glb'"></model-viewer>
+    </div>
+
+    <div class="group w-[260px] h-[260px] mx-auto">
+      <model-viewer src="models/model_05.glb" camera-controls auto-rotate interaction-prompt="auto" interaction-prompt-style="wiggle" disable-zoom disable-pan disable-tap class="transition-transform duration-300 group-hover:scale-110" style="width:100%; height:100%;" onmouseenter="this.src='models/model_05_hover.glb'" onmouseleave="this.src='models/model_05.glb'"></model-viewer>
+    </div>
+
+    <div class="group w-[260px] h-[260px] mx-auto">
+      <model-viewer src="models/model_06.glb" camera-controls auto-rotate interaction-prompt="auto" interaction-prompt-style="wiggle" disable-zoom disable-pan disable-tap class="transition-transform duration-300 group-hover:scale-110" style="width:100%; height:100%;" onmouseenter="this.src='models/model_06_hover.glb'" onmouseleave="this.src='models/model_06.glb'"></model-viewer>
+    </div>
+
+    <div class="group w-[260px] h-[260px] mx-auto">
+      <model-viewer src="models/model_07.glb" camera-controls auto-rotate interaction-prompt="auto" interaction-prompt-style="wiggle" disable-zoom disable-pan disable-tap class="transition-transform duration-300 group-hover:scale-110" style="width:100%; height:100%;" onmouseenter="this.src='models/model_07_hover.glb'" onmouseleave="this.src='models/model_07.glb'"></model-viewer>
+    </div>
+
+    <div class="group w-[260px] h-[260px] mx-auto">
+      <model-viewer src="models/model_08.glb" camera-controls auto-rotate interaction-prompt="auto" interaction-prompt-style="wiggle" disable-zoom disable-pan disable-tap class="transition-transform duration-300 group-hover:scale-110" style="width:100%; height:100%;" onmouseenter="this.src='models/model_08_hover.glb'" onmouseleave="this.src='models/model_08.glb'"></model-viewer>
+    </div>
+
+    <div class="group w-[260px] h-[260px] mx-auto">
+      <model-viewer src="models/model_09.glb" camera-controls auto-rotate interaction-prompt="auto" interaction-prompt-style="wiggle" disable-zoom disable-pan disable-tap class="transition-transform duration-300 group-hover:scale-110" style="width:100%; height:100%;" onmouseenter="this.src='models/model_09_hover.glb'" onmouseleave="this.src='models/model_09.glb'"></model-viewer>
+    </div>
+
+    <div class="group w-[260px] h-[260px] mx-auto">
+      <model-viewer src="models/model_10.glb" camera-controls auto-rotate interaction-prompt="auto" interaction-prompt-style="wiggle" disable-zoom disable-pan disable-tap class="transition-transform duration-300 group-hover:scale-110" style="width:100%; height:100%;" onmouseenter="this.src='models/model_10_hover.glb'" onmouseleave="this.src='models/model_10.glb'"></model-viewer>
+    </div>
+  </div>
+      <div class="w-full max-w-5xl text-center">
+       
+        <video
+  id="simulationVideo"
+  class="w-full h-auto border border-gray-300"
+  poster="videos/simulation1.jpg"
+  playsinline
+  muted
+  disablepictureinpicture
+  controlslist="nodownload nofullscreen noremoteplayback"
+>
+  <source src="videos/simulation1.mp4" type="video/mp4" />
+</video>
+
+
+
+        <button id="resimulateBtn" class="mt-4 px-6 py-2 bg-black text-white rounded-full hover:bg-gray-800">Resimulate</button>
+      </div>
+  </div>
+</section>
+
+
+
+<!-- Page 7 -->
+<section class="page snap-start min-h-screen w-full relative flex items-center justify-center z-10">
+  <img id="bgImage" src="images/bg_01.jpg" class="absolute inset-0 w-full h-full object-cover image-fade active z-0" />
+  <div class="z-10 relative flex flex-col gap-4">
+    <button class="overlay-button px-3 py-1 rounded" onclick="setBgImage(0)">Infrastructure</button>
+    <button class="overlay-button px-3 py-1 rounded" onclick="setBgImage(1)">Commercial</button>
+    <button class="overlay-button px-3 py-1 rounded" onclick="setBgImage(2)">Community</button>
+    <button class="overlay-button px-3 py-1 rounded" onclick="setBgImage(3)">Green Space</button>
+    <button class="overlay-button px-3 py-1 rounded" onclick="setBgImage(4)">Business</button>
+    <button class="overlay-button px-3 py-1 rounded" onclick="setBgImage(5)">Circulation</button>
+    <button class="overlay-button px-3 py-1 rounded" onclick="setBgImage(6)">Structure</button>
+  </div>
+</section>
+
+
+
+  </div>
+
+  <script src="scroll.js"></script>
+</body>
+</html>
